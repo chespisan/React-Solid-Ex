@@ -14,7 +14,6 @@ export const CartPage = () => {
     } catch (error) {
       console.log('err: ', error)
     }
-    
   }
 
   useEffect(() => {

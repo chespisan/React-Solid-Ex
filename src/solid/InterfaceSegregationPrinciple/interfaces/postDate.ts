@@ -1,3 +1,3 @@
-export interface IPostDate {
+export interface IDate {
   createdAt: Date
 }

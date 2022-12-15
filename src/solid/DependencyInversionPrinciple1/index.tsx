@@ -1,28 +1,29 @@
 import { useContext, useEffect, useState } from 'react'
 import { CartContext } from './context/provider'
 import { ICart } from './interfaces/cart'
+import { ICartReducer } from './interfaces/cartReducer'
 
 
 export const CartPage = () => {
-  const { getListCart } = useContext(CartContext)
-  const [data, setData] = useState<ICart[]>()
+  const [listCart, setListCart] = useState<ICart[]>()
+  const { getListCart } = useContext<ICartReducer>(CartContext)
 
-  const handleGetCart = async() => {
+  const handleGetCarts = async(): Promise<void> => {
     try {
-      const data = await getListCart()
-      setData(data)
+      const listCarts: ICart[] = await getListCart()
+      setListCart(listCarts)
     } catch (error) {
       console.log('err: ', error)
     }
   }
 
   useEffect(() => {
-    handleGetCart()
+    handleGetCarts()
   }, [])
 
   return (
     <div>
-      { data?.map(cart => (
+      { listCart?.map(cart => (
         <li>{ cart.id }</li>
       ))}
     </div>

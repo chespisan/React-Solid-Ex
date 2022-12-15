@@ -5,7 +5,7 @@ import { removeCart } from "../services/removeCart"
 
 export const useCartReducer = () => {
 
-  const getListCart = async(): Promise<ICart[] | undefined> => {
+  const getListCart = async(): Promise<ICart[]> => {
     const list = await getCart()
     return list
   }

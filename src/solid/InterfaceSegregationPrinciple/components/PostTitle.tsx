@@ -1,6 +1,6 @@
 import { FC } from "react"
-import { IPostTitle } from "../interfaces/postTitle"
+import { ITitle } from "../interfaces/postTitle"
 
-export const PostTitle: FC<IPostTitle> = ({ title }) => {
+export const Title: FC<ITitle> = ({ title }) => {
   return <h1>{title}</h1>
 }

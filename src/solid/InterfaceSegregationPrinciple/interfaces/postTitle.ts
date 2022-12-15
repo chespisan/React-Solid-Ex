@@ -1,3 +1,3 @@
-export interface IPostTitle {
+export interface ITitle {
   title: string
  }

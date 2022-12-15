@@ -1,5 +1,3 @@
-import { FC } from "react"
-import { Button } from "./components/Button"
 import { ButtonRed } from "./components/ButtonRed"
 
 

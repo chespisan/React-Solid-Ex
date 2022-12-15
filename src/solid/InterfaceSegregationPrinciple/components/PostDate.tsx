@@ -1,6 +1,6 @@
 import { FC } from "react"
-import { IPostDate } from "../interfaces/postDate"
+import { IDate } from "../interfaces/postDate"
 
-export const PostDate: FC<IPostDate> = ({ createdAt }) => {
+export const Date: FC<IDate> = ({ createdAt }) => {
   return <p>{`${createdAt}`}</p>
 }

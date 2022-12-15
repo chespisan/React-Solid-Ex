@@ -9,28 +9,29 @@ interface IPost {
   createdAt: Date
 }
 
-interface IPostTitle {
+interface ITitle {
  post: IPost
 }
 
-interface IPostDate {
+interface IDate {
   post: IPost
 }
 
-const PostTitle: FC<IPostTitle> = ({ post }) => {
+const Title: FC<ITitle> = ({ post }) => {
   return <h1>{post.title}</h1>
 }
 
-const PostDate: FC<IPostDate> = ({ post }) => {
+const Date: FC<IDate> = ({ post }) => {
   return <p>{`${post.createdAt}`}</p>
 }
 
+// Container
 export const Post: FC<IPost> = (post) => {
   return (
-    <div>
-      <PostTitle post={post} />
+    <div className="card">
+      <Title post={post} />
       <p>Author: {post.author.name}</p>
-      <PostDate post={post} />
+      <Date post={post} />
     </div>
   )
 }
